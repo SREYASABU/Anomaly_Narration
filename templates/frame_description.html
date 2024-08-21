@@ -1,0 +1,15 @@
+<!-- frame_description.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame Description</title>
+</head>
+<body>
+    <h1>Frame Description</h1>
+    <img src="{{ url_for('processed_frame', filename=filename) }}" alt="Frame" width="600">
+    <p><strong>Description:</strong> {{ description }}</p>
+    <a href="{{ url_for('show_anomalous_frames') }}">Back to Anomalous Frames</a>
+</body>
+</html>
