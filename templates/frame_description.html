@@ -1,15 +1,74 @@
-<!-- frame_description.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frame Description</title>
+    <title>Anomaly Detected</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #e94e77;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1em;
+            color: #4a90e2;
+            text-decoration: none;
+            border: 1px solid #4a90e2;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover {
+            background-color: #4a90e2;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <h1>Frame Description</h1>
-    <img src="{{ url_for('processed_frame', filename=filename) }}" alt="Frame" width="600">
-    <p><strong>Description:</strong> {{ description }}</p>
-    <a href="{{ url_for('show_anomalous_frames') }}">Back to Anomalous Frames</a>
+    <div class="container">
+        <h1>Anomaly Detected</h1>
+        <img src="{{ url_for('processed_frame', filename=filename) }}" alt="Anomalous Image" width="500">
+        <p>{{ description  }}</p>
+        <a href="{{ url_for('show_anomalous_frames') }}">Back to Anomalous Frames</a>
+    </div>
 </body>
 </html>
